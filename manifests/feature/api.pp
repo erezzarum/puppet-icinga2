@@ -317,7 +317,6 @@ class icinga2::feature::api(
       } ->
 
       exec { 'icinga2 pki create certificate signing request':
-        path    => $path,
         command => "icinga2 pki new-cert --cn '${::fqdn}' --key '${_ssl_key_path}' --csr '${_ssl_csr_path}'",
         creates => $_ssl_key_path,
       } ->
